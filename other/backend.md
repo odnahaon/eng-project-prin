@@ -3,7 +3,8 @@
 ## Todo
 
 - Collision
-  - On collision detection, change dino sprite, display score, add play again button
+  - On collision detection, change dino sprite, display score, stop side scroll, add play again button
+  - Also add high score if functionality is added
 - Spacebar link to jump function
   - Jump to avoid collision
   - Change dino animation for jump
@@ -15,12 +16,32 @@
   - Cactus and birds
   - Different sizes of cactus
   - Different bird heights - 3
+  - Maybe add custom obstacles
+    - Platforms?
+    - Falling objects?
 - Keep score when game starts
   - Change day and night depending on score
+- Difficulty setting
+  - Easy and hard
+- Changeable speed
 
 ## Additional ideas if I have time
 
-- High score
-  - Needs separate text file, may be too complicated
+- File manipulation
+  - Local high score
+    - Needs separate text file, may be too complicated
+    - Separate user names?
+    - New area and level unlocks based on high scores
+  - Cosmetics
+    - Themes
+    - Areas
+    - Skins
+- Global leaderboards
+  - Needs online server
+  - Skin for 1st place?
+  - Weekly leaderboard resets
 - AI
   - Just complicated in general
+  - Needs to perfectly jump and crouch with millisecond reactions
+- Multiplayer
+  - Flesh out finer details too
