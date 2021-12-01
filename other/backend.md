@@ -21,6 +21,7 @@
     - Falling objects?
 - Keep score when game starts
   - Change day and night depending on score
+    - Every 700 is night, 200 after that is day again
 - Difficulty setting
   - Easy and hard
 - Changeable speed
