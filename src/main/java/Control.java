@@ -1,5 +1,5 @@
 public class Control {
-  public void main () {
+  public void main() {
     
   }
 }

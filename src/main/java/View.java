@@ -1,5 +1,14 @@
 public class View {
-  public void main () {
-    
+  List obstacles[];
+  public void main() {
+
+  }
+
+  public void reset() {
+
+  }
+
+  public void renderObstacles(int typeOf) {
+
   }
 }
