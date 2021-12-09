@@ -1,35 +1,41 @@
-import View;
+package main.java;
+
+import main.java.View;
 
 public class Control {
-  public void main() {
-    View.main();
-  }
+    private View view = new View();
+    public void main() {
+        view.main();
+    }
 
-  private void reset() {
+    private void reset() {
+        view.reset();
+    }
 
-  }
+    private void collisionDetection() {
+        boolean colli = false;
+        if (colli) {
+            reset();
+        }
+    }
 
-  private void collisionDetection() {
+    private void generateObstacles() {
 
-  }
+    }
 
-  private void generateObstacles() {
+    private void jumpDetection() {
+        view.jump();
+    }
 
-  }
+    private void downDetection() {
+        view.down();
+    }
 
-  private void jumpDetection() {
+    private void shiftBox() {
 
-  }
+    }
 
-  private void downDetection() {
+    private void playAgain() {
 
-  }
-
-  private void shiftBox() {
-
-  }
-
-  private void playAgain() {
-    
-  }
+    }
 }

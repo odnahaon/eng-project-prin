@@ -1,29 +1,61 @@
-import java.awt.Image;
+package main.java;
+
+import java.awt.*;
 import java.awt.image.BufferedImage;
-import javax.javax.imageio.*;
-import java.awt.Graphics2D;
+import java.awt.event.*;
+import javax.imageio.*;
+import javax.swing.*;
+import java.io.*;
+import java.util.ArrayList;
 
 public class View {
 
-  List obstacles[];
+    /*
+    Initialize your windows.
+     */
+    public void main() {
+        JFrame frame = new JFrame();
+    }
 
-  public void main() {
+    /*
+    Freeze animations, play any death animations, and display a play again button
+     */
+    public void reset() {
+        JButton button = new JButton("Retry");
+        button.
 
-  }
+        JLabel label = new JLabel("Click to retry");
+    }
 
-  public void reset() {
+    /*
+    Display a graphic for the obstacle depending on the number. Assign an obstacle to each number beginning with 0 and working upwards.
+     */
+    public void renderObstacles(int typeOf) {
 
-  }
+    }
 
-  public void renderObstacles(int typeOf) {
+    /*
+    Play a jumping animation.
+     */
+    public void jump() {
+        try {
+            File jumpImageFile = new File("");
+            Image jumpImage = ImageIO.read(jumpImageFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-  }
-
-  public void jump() {
-
-  }
-
-  public void down() {
-
-  }
+    /*
+    Play a crouching animation.
+     */
+    public void down() {
+        try {
+        File crouchImageFile = new File("");
+        Image crouchImage = ImageIO.read(crouchImageFile);
+        }
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
