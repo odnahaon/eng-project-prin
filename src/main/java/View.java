@@ -14,7 +14,13 @@ public class View {
     Initialize your windows.
      */
     public void main() {
+
+        public GameWindow(int w, int h, Stringtitle, Game game){
+        game.setPreferedSize(new Dimension(w,h));
+
+        }
         JFrame frame = new JFrame();
+        frame.add(game)
     }
 
     /*
@@ -24,7 +30,6 @@ public class View {
         JButton button = new JButton("Retry");
         button.
 
-        JLabel label = new JLabel("Click to retry");
     }
 
     /*
