@@ -1,8 +1,6 @@
 package main.java;
 
 import java.util.ArrayList;
-import java.util.List;
-import main.java.Obstacles;
 
 public class Model {
 
@@ -30,7 +28,11 @@ public class Model {
         return obstacles;
     }
 
-    public void addObstacle() {
-
+    public void addObstacle(Obstacles o) {
+        obstacles.add(o);
+    }
+    
+    public void removeObstacle(int index) {
+        removeObstacle(index);
     }
 }

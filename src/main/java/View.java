@@ -15,12 +15,9 @@ public class View {
      */
     public void main() {
 
-        public GameWindow(int w, int h, Stringtitle, Game game){
-        game.setPreferedSize(new Dimension(w,h));
-
-        }
+    public static void start {
         JFrame frame = new JFrame();
-        frame.add(game)
+        frame.add(game);
     }
 
     /*
@@ -28,7 +25,7 @@ public class View {
      */
     public void reset() {
         JButton button = new JButton("Retry");
-        button.
+        button.addActionListener((ActionListener) this);
 
     }
 
@@ -49,8 +46,16 @@ public class View {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    public void render(){
+        BufferStrategy bs = this.BufferStrategy();
 
+        if (bs == null){
+            this.createBufferStrategy( numBuffers: 3);
+        }
+
+        Graphics
+    }
+}
     /*
     Play a crouching animation.
      */
