@@ -1,6 +1,7 @@
 package main.java;
 
 import java.awt.*;
+import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.event.*;
 import javax.imageio.*;
@@ -14,8 +15,9 @@ public class View {
     Initialize your windows.
      */
     public void main() {
+    }
 
-    public static void start {
+    public static void start() {
         JFrame frame = new JFrame();
         frame.add(game);
     }
@@ -23,17 +25,25 @@ public class View {
     /*
     Freeze animations, play any death animations, and display a play again button
      */
-    public void reset() {
+    public void gameOver() {
         JButton button = new JButton("Retry");
         button.addActionListener((ActionListener) this);
 
     }
 
     /*
+    Reset the dino to the start, clear all obstacles, change to day, reset score to 0
+     */
+    public void playAgain() {
+
+    }
+
+    /*
     Display a graphic for the obstacle depending on the number. Assign an obstacle to each number beginning with 0 and working upwards.
      */
-    public void renderObstacles(int typeOf) {
-
+    public void renderObstacles(Obstacles typeOf) {
+        // This gives you the name of the obstacle to place, may be helpful
+        typeOf.getTypeToString();
     }
 
     /*
@@ -41,31 +51,43 @@ public class View {
      */
     public void jump() {
         try {
-            File jumpImageFile = new File("");
+            File jumpImageFile = new File("/resources/dino-jump.png");
             Image jumpImage = ImageIO.read(jumpImageFile);
         } catch (IOException e) {
             e.printStackTrace();
         }
-    public void render(){
         BufferStrategy bs = this.BufferStrategy();
 
-        if (bs == null){
-            this.createBufferStrategy( numBuffers: 3);
+        if (bs == null) {
+            this.createBufferStrategy(3);
         }
 
         Graphics
     }
-}
+
     /*
     Play a crouching animation.
      */
     public void down() {
         try {
-        File crouchImageFile = new File("");
+        File crouchImageFile = new File("/resources/dino-duck-1.png");
         Image crouchImage = ImageIO.read(crouchImageFile);
-        }
-        catch(IOException e) {
+        } catch(IOException e) {
             e.printStackTrace();
         }
+        BufferStrategy bs = this.BufferStrategy();
+
+        if (bs == null){
+            this.createBufferStrategy(3);
+        }
+    }
+
+    /*
+    Toggle the day/night cycle
+    @param isDay false = night; true = day
+     */
+    public void toggleDay(boolean isDay) {
+boolean = true 
+boolean
     }
 }
