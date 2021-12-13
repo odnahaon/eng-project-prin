@@ -5,7 +5,10 @@ import java.util.ArrayList;
 public class Model {
 
     private int score = 0;
+    
+    // True if day, false if night
     private boolean dayState = true;
+    
     ArrayList<Obstacles> obstacles = new ArrayList<Obstacles>();
 
     public int getScore() {
@@ -33,6 +36,6 @@ public class Model {
     }
     
     public void removeObstacle(int index) {
-        removeObstacle(index);
+        obstacles.remove(index);
     }
 }
