@@ -1,12 +1,22 @@
 package main.java;
 
-import main.java.View;
+import java.security.SecureRandom;
 
 public class Control {
+
     private View view = new View();
     private Model model = new Model();
+    int currPos = 0;
+
     public void main() {
         view.main();
+    }
+
+    private void run() {
+
+        if (currPos == 600) {
+            toggleDay();
+        }
     }
 
     private void gameOver() {
@@ -21,7 +31,15 @@ public class Control {
     }
 
     private void generateObstacles() {
-
+        SecureRandom rand = new SecureRandom();
+        int randInt = 69;
+        if (currPos >= 500) {
+            randInt = rand.nextInt(9);
+        } else {
+            randInt = rand.nextInt(6);
+        }
+        Obstacles typeOf = new Obstacles(currPos, TypeOfObs.toObstacle(randInt));
+        view.renderObstacles(typeOf);
     }
 
     private void jumpDetection() {

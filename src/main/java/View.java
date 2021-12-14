@@ -19,7 +19,6 @@ public class View {
 
     public static void start() {
         JFrame frame = new JFrame();
-        frame.add(game);
     }
 
     /*
@@ -87,7 +86,7 @@ public class View {
     @param isDay false = night; true = day
      */
     public void toggleDay(boolean isDay) {
-boolean = true 
-boolean
-    }
+        if 
+        boolean isDay = true;
+        boolean isDay = false;
 }
