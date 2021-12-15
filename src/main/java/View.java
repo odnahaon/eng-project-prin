@@ -1,13 +1,12 @@
 package main.java;
 
-import java.awt.*;
-import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
-import java.awt.event.*;
-import javax.imageio.*;
+import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.io.*;
-import java.util.ArrayList;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferStrategy;
+import java.io.File;
+import java.io.IOException;
 
 public class View {
 
@@ -15,6 +14,7 @@ public class View {
     Initialize your windows.
      */
     public void main() {
+
     }
 
     public static void start() {
@@ -27,14 +27,13 @@ public class View {
     public void gameOver() {
         JButton button = new JButton("Retry");
         button.addActionListener((ActionListener) this);
-
     }
 
     /*
     Reset the dino to the start, clear all obstacles, change to day, reset score to 0
      */
     public void playAgain() {
-
+        
     }
 
     /*
@@ -86,7 +85,11 @@ public class View {
     @param isDay false = night; true = day
      */
     public void toggleDay(boolean isDay) {
-        if 
-        boolean isDay = true;
-        boolean isDay = false;
+        if (isDay) {
+            // Change the colors to not be inverted
+            static Color
+        } else {
+            // Invert the colors
+        }
+    }
 }

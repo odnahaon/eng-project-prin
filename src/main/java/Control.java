@@ -1,12 +1,16 @@
 package main.java;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.security.SecureRandom;
+import java.util.ArrayList;
 
-public class Control {
+public class Control implements KeyListener {
 
     private View view = new View();
     private Model model = new Model();
     int currPos = 0;
+    ArrayList<Obstacles> obstacles = new ArrayList<Obstacles>();
 
     public void main() {
         view.main();
@@ -24,6 +28,7 @@ public class Control {
     }
 
     private void collisionDetection() {
+
         boolean colli = false;
         if (colli) {
             gameOver();
@@ -43,6 +48,7 @@ public class Control {
     }
 
     private void jumpDetection() {
+
         view.jump();
     }
 
@@ -62,5 +68,24 @@ public class Control {
 
     private void playAgain() {
         view.playAgain();
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+
+        } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }
