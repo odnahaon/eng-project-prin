@@ -28,8 +28,8 @@ public class Control implements KeyListener {
     }
 
     private void collisionDetection() {
-
         boolean colli = false;
+
         if (colli) {
             gameOver();
         }
@@ -43,7 +43,7 @@ public class Control implements KeyListener {
         } else {
             randInt = rand.nextInt(6);
         }
-        Obstacles typeOf = new Obstacles(currPos, TypeOfObs.toObstacle(randInt));
+        Obstacles typeOf = new Obstacles(new Position(currPos, 0), TypeOfObs.toObstacle(randInt));
         view.renderObstacles(typeOf);
     }
 
@@ -53,6 +53,7 @@ public class Control implements KeyListener {
     }
 
     private void downDetection() {
+
         view.down();
     }
     
@@ -72,20 +73,23 @@ public class Control implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-
+        // Literally has no function but it's needed anyways I guess?
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_UP) {
+            jumpDetection();
+        }
         if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-
-        } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-
+            downDetection();
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            downDetection();
+        }
     }
 }

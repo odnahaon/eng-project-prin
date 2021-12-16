@@ -5,15 +5,15 @@ import java.io.Serializable;
 public class Obstacles implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    public static int pos;
+    public static Position pos;
     public static TypeOfObs typeOf;
 
-    public Obstacles(int pos, TypeOfObs typeOf) {
+    public Obstacles(Position pos, TypeOfObs typeOf) {
         this.pos = pos;
         this.typeOf = typeOf;
     }
 
-    public static final int getPos() {
+    public static final Position getPos() {
         return pos;
     }
     
