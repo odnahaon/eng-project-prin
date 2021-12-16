@@ -8,13 +8,13 @@ import java.awt.image.BufferStrategy;
 import java.io.File;
 import java.io.IOException;
 
-public class View {
+public class View extends JFrame {
 
+    BufferStrategy bs;
     /*
     Initialize your windows.
      */
     public void main() {
-
     }
 
     public static void start() {
@@ -54,13 +54,10 @@ public class View {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        BufferStrategy bs = this.BufferStrategy();
 
         if (bs == null) {
             this.createBufferStrategy(3);
         }
-
-        Graphics
     }
 
     /*
@@ -73,7 +70,6 @@ public class View {
         } catch(IOException e) {
             e.printStackTrace();
         }
-        BufferStrategy bs = this.BufferStrategy();
 
         if (bs == null){
             this.createBufferStrategy(3);
@@ -87,7 +83,7 @@ public class View {
     public void toggleDay(boolean isDay) {
         if (isDay) {
             // Change the colors to not be inverted
-            static Color
+            boolean Opaque = false;
         } else {
             // Invert the colors
         }
