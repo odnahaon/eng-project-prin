@@ -3,14 +3,16 @@ package main.java;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferStrategy;
 import java.io.File;
 import java.io.IOException;
 
 public class View extends JFrame {
 
-    BufferStrategy bs;
+    private BufferStrategy bs;
+    private final Control ctrl = new Control();
+    private boolean Opaque;
+
     /*
     Initialize your windows.
      */
@@ -26,7 +28,7 @@ public class View extends JFrame {
      */
     public void gameOver() {
         JButton button = new JButton("Retry");
-        button.addActionListener((ActionListener) this);
+        button.addActionListener(e -> ctrl.playAgain());
     }
 
     /*
@@ -41,7 +43,7 @@ public class View extends JFrame {
      */
     public void renderObstacles(Obstacles typeOf) {
         // This gives you the name of the obstacle to place, may be helpful
-        typeOf.getTypeToString();
+        Obstacles.getTypeToString();
     }
 
     /*
@@ -83,9 +85,12 @@ public class View extends JFrame {
     public void toggleDay(boolean isDay) {
         if (isDay) {
             // Change the colors to not be inverted
-            boolean Opaque = false;
-        } else {
+            Opaque = false;
+        }
+        else {
             // Invert the colors
+            Opaque = true;
+            
         }
     }
 }

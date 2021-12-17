@@ -7,13 +7,21 @@ import java.util.ArrayList;
 
 public class Control implements KeyListener {
 
-    private View view = new View();
-    private Model model = new Model();
-    int currPos = 0;
-    ArrayList<Obstacles> obstacles = new ArrayList<Obstacles>();
+    private final View view = new View();
+    private final Model model = new Model();
+    private int currPos = 0;
+    private boolean started = false;
+    private final ArrayList<Obstacles> obstacles = new ArrayList<>();
 
     public void main() {
         view.main();
+    }
+
+    public void start() {
+        run();
+        View.start();
+        started = true;
+
     }
 
     private void run() {
@@ -28,16 +36,16 @@ public class Control implements KeyListener {
     }
 
     private void collisionDetection() {
-        boolean colli = false;
+        boolean collision = false;
 
-        if (colli) {
+        if (collision) {
             gameOver();
         }
     }
 
     private void generateObstacles() {
         SecureRandom rand = new SecureRandom();
-        int randInt = 69;
+        int randInt;
         if (currPos >= 500) {
             randInt = rand.nextInt(9);
         } else {
@@ -48,12 +56,12 @@ public class Control implements KeyListener {
     }
 
     private void jumpDetection() {
-
+        shiftBox(0);
         view.jump();
     }
 
     private void downDetection() {
-
+        shiftBox(1);
         view.down();
     }
     
@@ -63,26 +71,41 @@ public class Control implements KeyListener {
         view.toggleDay(isDay);
     }
 
-    private void shiftBox() {
+    /*
+    Shifts the hit box of the dino
+    @param s 0 = jump, 1 = down
+     */
+    private void shiftBox(int s) {
+        if (s == 0) {
 
+        } else if (s == 1) {
+
+        }
     }
 
-    private void playAgain() {
+    public void playAgain() {
+        currPos = 0;
+        model.resetAllTheThings();
         view.playAgain();
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
-        // Literally has no function but it's needed anyways I guess?
+        // Literally has no function, but it's needed anyway I guess?
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_UP) {
-            jumpDetection();
+        if (!started && e.getKeyCode() == KeyEvent.VK_SPACE) {
+            start();
         }
-        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            downDetection();
+        if (started) {
+            if (e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_UP) {
+                jumpDetection();
+            }
+            if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+                downDetection();
+            }
         }
     }
 

@@ -38,4 +38,14 @@ public class Model {
     public void removeObstacle(int index) {
         obstacles.remove(index);
     }
+
+    public void resetObstacles() {
+        obstacles.clear();
+    }
+    
+    public void resetAllTheThings() {
+        resetScore();
+        resetDayState();
+        resetObstacles();
+    }
 }
